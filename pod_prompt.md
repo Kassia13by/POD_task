@@ -25,7 +25,9 @@ such as weight, transport code and so on
 
 Below is a sample extracted POD information organized as markdown table, and the result I would like to output:
 
-example 1: | Cell Number | Field Name | Translation (English) | Content (Extracted Information) |
+example 1: 
+
+| Cell Number | Field Name | Translation (English) | Content (Extracted Information) |
 |------------|------------|----------------------|--------------------------------|
 | 1 | Absender | Shipper | ASUS EUROPE B.V., PAASHEUVELWEG 25, 1105 BP AMSTERDAM NH, NETHERLANDS |
 | 2 | Empfänger | Consignee | CPCDI, RUA MONTE DOS PIPOS NO 649, 4460-059 GUIFOES, PORTUGAL |
