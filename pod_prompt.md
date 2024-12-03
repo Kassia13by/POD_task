@@ -104,6 +104,8 @@ The process of extracting data from PODs is akin to organizing ingredients for a
 
 此外，亦採用少樣本學習（Few-Shot Learning）穿插其中，提升模型的準確性。例如 markdown table 描述 pdf 檔案內容架構以及範例的 ```.json``` 輸出。
 
+[參考資料](https://www.researchgate.net/publication/385292073_Can_Stories_Help_LLMs_Reason_Curating_Information_Space_Through_Narrative)
+
 
 
 
