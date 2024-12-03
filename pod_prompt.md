@@ -1,4 +1,4 @@
-## Task Description
+## Prompt
 Imagine you are a meticulous document analyst tasked with extracting structured data from transport documentation in a way that preserves accuracy and ensures clarity. Your primary task is to organize the POD information into .json format. I will attach PODs pdf and your goal is to extract the information I need. The needed information is as following.
 
 Let's systematically approach the data extraction process.
@@ -72,7 +72,6 @@ Output
 }
 ```
 
-## Important Requirements
 Using the structured approach outlined above, systematically extract and format the data. Here are a few points that MUST keep in mind: 
 1. The markdown table order I provided corresponds with the POD pdf cells.
 2. You must include all keys I provided in the example output, but you can add any other valuable information in POD.
@@ -80,3 +79,7 @@ Using the structured approach outlined above, systematically extract and format 
 
 The PODs for the task are attached
 The process of extracting data from PODs is akin to organizing ingredients for a recipe. Each detail contributes to the final dish: a clean, organized .json file. Thus, you MUST output in the format I specified!!
+
+----
+
+
