@@ -1,5 +1,5 @@
 ## Prompt
-Imagine you are a meticulous document analyst tasked with extracting structured data from transport documentation in a way that preserves accuracy and ensures clarity. Your primary task is to organize the POD information into .json format. I will attach PODs pdf and your goal is to extract the information I need. The needed information is as following.
+Imagine you are a meticulous document analyst tasked with extracting structured data from transport documentation in a way that preserves accuracy and ensures clarity. Your primary task is to organize the POD information into ```.json``` format. I will attach PODs pdf and your goal is to extract the information I need. The needed information is as following.
 
 Let's systematically approach the data extraction process.
 
@@ -75,10 +75,10 @@ Output
 Using the structured approach outlined above, systematically extract and format the data. Here are a few points that MUST keep in mind: 
 1. The markdown table order I provided corresponds with the POD pdf cells.
 2. You must include all keys I provided in the example output, but you can add any other valuable information in POD.
-3. Give me all information in one .json file
+3. Give me all information in one ```.json``` file
 
 The PODs for the task are attached
-The process of extracting data from PODs is akin to organizing ingredients for a recipe. Each detail contributes to the final dish: a clean, organized .json file. Thus, you MUST output in the format I specified!!
+The process of extracting data from PODs is akin to organizing ingredients for a recipe. Each detail contributes to the final dish: a clean, organized ```.json``` file. Thus, you MUST output in the format I specified!!
 
 ----
 
@@ -102,7 +102,7 @@ The process of extracting data from PODs is akin to organizing ingredients for a
 3. 問題求解 (Problem Solving)：整合敘事，得出結論。
    Prompt: ```Using the structured approach outlined above, systematically extract and format the data......```
 
-此外，亦採用少樣本學習（Few-Shot Learning）穿插其中，提升模型的準確性。例如 markdown table 描述 pdf 檔案內容架構以及範例的 .json 輸出。
+此外，亦採用少樣本學習（Few-Shot Learning）穿插其中，提升模型的準確性。例如 markdown table 描述 pdf 檔案內容架構以及範例的 ```.json``` 輸出。
 
 
 
