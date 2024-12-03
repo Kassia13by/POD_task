@@ -1,31 +1,34 @@
 ## Task Description
-You are a POD information service AI assistant. Your task is to organize the POD information into .json format. I will attach PODs pdf and your goal is to extract the information I need. The needed information is as following: 
+Imagine you are a meticulous document analyst tasked with extracting structured data from transport documentation in a way that preserves accuracy and ensures clarity. Your primary task is to organize the POD information into .json format. I will attach PODs pdf and your goal is to extract the information I need. The needed information is as following.
 
+Let's systematically approach the data extraction process.
+
+First, scan the document for the Delivery Number (DN/SO), ensuring each component of the number is correctly parsed.
 1. **Delivery Number (DN/SO)**
-The first few codes of DN/SO are the same and will be separated by "/", for example: 11240074345/4347/4349. DN/SO should be intercepted one by one and if there is more than one DN/SO, representing all by array. 
+   - The first few codes of DN/SO are the same and will be separated by "/", for example: 11240074345/4347/4349. DN/SO       should be intercepted one by one and if there is more than one DN/SO, representing all by array. 
 
-1. **Shipper**
+Next, focus on identifying and categorizing key fields such as
+2. **Shipper**
+3. **Consignee**
+4. **Ship to Address**
 
-2. **Consignee**
-
-3. **Ship to Address**
-
-4. **Pallet Quantity** 
+Finally, confirm if all required details, including the 
+5. **Pallet Quantity** 
    - Can be found in "Pallets" or "Anzahl der Paktstücke"
-
-5. **POD Date**
+6. **POD Date**
    - Date in the file or "Ausgefertigt"
-   - Format as dd-mm-yyyy
-
-6. **Shipping Signed Status**
+   - Consider scenarios where some fields are ambiguously written. For instance, convert POD date to dd-mm-yyyy
+7. **Shipping Signed Status**
    - Check if signed in "Unterschrift und Stempel des Empfängers" cell
+   - If the signature field is unmarked, set the value as No
+8. **Other Valuable Information**
+   - Think of this task like assembling a puzzle. Each piece of information may be critical to creating a complete
+     picture. For instance, information such as weight, transport code and so on could be important addtional
+     information.
 
-7. **Other Valuable Information**
-such as weight, transport code and so on
+Below is a sample extracted POD information organized as markdown table, and the result I would like you to output:
 
-Below is a sample extracted POD information organized as markdown table, and the result I would like to output:
-
-example 1: 
+example: 
 
 | Cell Number | Field Name | Translation (English) | Content (Extracted Information) |
 |------------|------------|----------------------|--------------------------------|
@@ -56,6 +59,7 @@ example 1:
 | 25 | Code Frachtführer Nr | Carrier Code | NL S00194864 |
 
 Output
+
 ```json
 {
     "Delivery Number (DN/SO)": ["16240017204"],
@@ -69,10 +73,10 @@ Output
 ```
 
 ## Important Requirements
-Here are a few points that MUST keep in mind: 
+Using the structured approach outlined above, systematically extract and format the data. Here are a few points that MUST keep in mind: 
 1. The markdown table order I provided corresponds with the POD pdf cells.
 2. You must include all keys I provided in the example output, but you can add any other valuable information in POD.
 3. Give me all information in one .json file
 
 The PODs for the task are attached
-You MUST output in the format I specified!!
+The process of extracting data from PODs is akin to organizing ingredients for a recipe. Each detail contributes to the final dish: a clean, organized .json file. Thus, you MUST output in the format I specified!!
