@@ -82,4 +82,30 @@ The process of extracting data from PODs is akin to organizing ingredients for a
 
 ----
 
+## Prompt 設計說明
+
+主要採用「思維故事 (Story of Thought, SoT)」方法設計，即將敘事視為設計的核心原則，結合邏輯與創造力，建立引導明確的對話架構。SoT 包含三個部分：問題闡明 (Question Clarification)、敘事生成 (Narrative Generation)、問題求解 (Problem Solving)。以下詳述並以設計的 prompt 為例說明
+
+1. 問題闡明 (Question Clarification)：將複雜問題拆解為多個子問題，並透過角色扮演引導 AI 理解情境。例如，將 AI 設定為「文件分析專家」或「資料結構化助理」，幫助其專注於具體任務需求，避免模糊與歧義。
+   Prompt:
+   ```Imagine you are a meticulous document analyst tasked with extracting structured data from transport documentation in a way that preserves accuracy and ensures clarity. Your primary task is to organize the POD information into .json format. I will attach PODs pdf and your goal is to extract the information I need. The needed information is as following.```
+2. 敘事生成 (Narrative Generation)：可透過五種敘事技術，幫助 AI 在訊息處理中構建邏輯（不一定要全部包含）：
+   - 逐步披露 (Progressive Disclosure)：分階段揭示問題脈絡，使 AI 的思考過程循序漸進。
+     Prompt: ```Let's systematically approach the data extraction process.......```
+   - 分支敘述 (Branching)：從不同角度探索可能性，提升問題求解的全面性。
+     Prompt: ```Date in the file or "Ausgefertigt" Consider scenarios where some fields are ambiguously written. For instance, convert POD date to dd-mm-yyyy```(逐步披露列點底下的小點說明)
+   - 類比 (Analogy)：用熟悉的情境解釋複雜概念。
+     Prompt: ```Think of this task like assembling a puzzle......```
+   - 類比推理 (Analogical Reasoning)：以相似性聯繫不同概念，建構邏輯推理基礎。
+   - 隱喻 (Metaphor)：以比喻方式描述問題核心。
+     Prompt: ```The process of extracting data from PODs is akin to organizing ingredients for a recipe. Each detail contributes to the final dish: a clean, organized .json file.```
+3. 問題求解 (Problem Solving)：整合敘事，得出結論。
+   Prompt: ```Using the structured approach outlined above, systematically extract and format the data......```
+
+此外，亦採用少樣本學習（Few-Shot Learning）穿插其中，提升模型的準確性。例如 markdown table 描述 pdf 檔案內容架構以及範例的 .json 輸出。
+
+
+
+
+
 
